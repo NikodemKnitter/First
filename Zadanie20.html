@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>
+ Obliczenie Pola i Obwodu trapezu równoramiennego
+</title>
+<meta charset="utf-8">
+ <script language="JavaScript">
+function Pow_Knitter(a,b,h)
+{
+ a_liczba=parseFloat(a)
+ b_liczba=parseFloat(b)
+ h_liczba=parseFloat(h)
+ Pole_wynik=(a_liczba+b_liczba)/2*h_liczba
+ document.getElementsByName('pole')[0].value=Pole_wynik.toFixed(2);
+ alert("Pole="+Pole_wynik.toFixed(2)+"cm^2");
+ pokaz1.innerHTML="Pole="+Pole_wynik.toFixed(2)+" cm^2"+"<br>"; 
+}
+function Obw_Knitter(a,b,c,h,z)
+{
+ a_liczba=parseFloat(a)
+ b_liczba=parseFloat(b)
+ c_liczba=parseFloat(c)
+ h_liczba=parseFloat(h)
+ z_liczba=parseFloat(z)
+ z_liczba=(b_liczba-a_liczba)/2
+ Math.pow(c_liczba, 2)=z_liczba*z_liczba+h_liczba*h_liczba
+ //Math.pow(c_liczba, 2)=Math.pow(z_liczba, 2)+Math.pow(h_liczba, 2)
+ Obwod_wynik=a_liczba+b_liczba+2*c_liczba
+ document.getElementsByName('obw')[0].value=Obwod_wynik.toFixed(2);
+ alert("Obwód="+Obwod_wynik.toFixed(2)+"cm");
+ pokaz2.innerHTML="Obwód="+Obwod_wynik.toFixed(2)+"cm";
+}
+ </script>
+</head>
+<body>
+Pobliczanie Pola i Obwodu trapezu równoramiennego
+<br> <br>
+<form name="formularz" action="..." onsubmit="Pow_Knitter(this.a.value,this.b.value);
+Obw_Knitter(this.a.value,this.b.value);return false">
+Podaj krótszą podstawe=
+<input size="6" name="a">
+Podaj dłuższą podstawe=
+<input size="6" name="b">
+Podaj wysokość=
+<input size="6" name="h">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+Pole=
+<input size="6" name="pole">
+Obwód=
+<input size="6" name="obw">
+</form>
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+</body> 
